@@ -20,11 +20,10 @@ public class JobPosition {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="position")
+	@Column(name="position",unique = true)
 	private String position;
 	
 

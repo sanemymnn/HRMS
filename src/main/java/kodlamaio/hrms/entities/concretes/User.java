@@ -35,6 +35,6 @@ public class User {
 	private String password;
 
 	
-	@Column(name="password")
+	@Column(name="password_again")
 	private String passwordAgain;
 }

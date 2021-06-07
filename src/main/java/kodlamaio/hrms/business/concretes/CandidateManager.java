@@ -62,16 +62,16 @@ public class CandidateManager implements CandidateService{
 			
 			this.candidateDao.save(candidate);
 			
-			return new SuccessDataResult("Kayıt Başarılı. Email adresinize gelen kodu onaylamayı unutmayınız'");
+			return new SuccessDataResult("Registration Successful. Please confirm the code sent to your e-mail address.");
 		}else {
-			return new ErrorResult("Kayıt başarısız. Tekrar deneyiniz!");
+			return new ErrorResult("Registration failed. Please try again!");
 		}
 	}
 
 	@Override
 	public DataResult<List<Candidate>> getAll() {
 	
-		return new SuccessDataResult<List<Candidate>>(this.candidateDao.findAll(),"Data listelendi.");
+		return new SuccessDataResult<List<Candidate>>(this.candidateDao.findAll(),"Data is listed.");
 	}
 
 }

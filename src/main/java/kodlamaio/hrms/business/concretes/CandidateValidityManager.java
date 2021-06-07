@@ -20,7 +20,7 @@ public class CandidateValidityManager implements CandidateValidityService {
 	@Override
 	public boolean isFirstNameEmpty(String firstName) {
 		if(firstName.isEmpty()) {
-			System.out.println("Adınızı girmeniz gerekiyor.");
+			System.out.println("You must enter your name.");
 			return true;
 		}
 		else {
@@ -31,7 +31,7 @@ public class CandidateValidityManager implements CandidateValidityService {
 	@Override
 	public boolean isLastNameEmpty(String lastName) {
 		if(lastName.isEmpty()) {
-			System.out.println("Soyadınızı girmeniz gerekiyor.");
+			System.out.println("You must enter your last name");
 			return true;
 		}
 		else {
@@ -42,7 +42,7 @@ public class CandidateValidityManager implements CandidateValidityService {
 	@Override
 	public boolean isBirthYearEmpty(int birthYear) {
 		if(String.valueOf(birthYear).isEmpty()) {
-			System.out.println("Doğum yılınızı girmeniz gerekiyor.");
+			System.out.println("You must enter yout birth year.");
 			return true;
 		}
 		else {
@@ -53,7 +53,7 @@ public class CandidateValidityManager implements CandidateValidityService {
 	@Override
 	public boolean isNationalIdentityEmpty(String nationalIdentity) {
 		if(nationalIdentity.isEmpty()) {
-			System.out.println("TC kimlik numaranızı girmeniz gerekiyor.");
+			System.out.println("You must enter your nationality identity number.");
 			return true;
 		}
 		else {
@@ -64,7 +64,7 @@ public class CandidateValidityManager implements CandidateValidityService {
 	@Override
 	public boolean isPasswordEmpty(String password) {
 		if(password.isEmpty()) {
-			System.out.println("Şifrenizi girmeniz gerekiyor.");
+			System.out.println("You must enter password.");
 			return true;
 		}
 		else {
@@ -75,7 +75,7 @@ public class CandidateValidityManager implements CandidateValidityService {
 	@Override
 	public boolean isPasswordAgainEmpty(String password) {
 		if(password.isEmpty()) {
-			System.out.println("Şifrenizi tekrar girmeniz gerekiyor.");
+			System.out.println("You must enter password again.");
 			return true;
 		}
 		else {
@@ -87,7 +87,7 @@ public class CandidateValidityManager implements CandidateValidityService {
 	public boolean isEmailUsed(String email) {
 		for(Candidate candidate : candidateDao.findAll()) {
 			if(email.equals(candidate.getEmail())) {
-				System.out.println("Email daha önce kaydedilmiş.");
+				System.out.println("Email is used before. Please enter a new email.");
 				return false;
 			}
 		}
@@ -98,7 +98,7 @@ public class CandidateValidityManager implements CandidateValidityService {
 	public boolean isNationalIdentityUSed(String nationalIdentity) {
 		for(Candidate candidate : candidateDao.findAll()) {
 			if(nationalIdentity.equals(candidate.getNationalIdentity())) {
-				System.out.println("TC kimlik numarası daha önce kaydedilmiş.");
+				System.out.println("Nationality identity number is saved before!");
 				return false;
 			}
 		}
